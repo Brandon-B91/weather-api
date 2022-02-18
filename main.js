@@ -11,8 +11,8 @@ searchBox.addEventListener("keypress", setQuery);
 function setQuery(e) {
   if (e.keyCode == 13) {
     getResults(searchBox.value);
-    searchBox.value = "";
     localStorage.setItem("location", searchBox.value);
+    searchBox.value = "";
   }
 }
 
@@ -26,7 +26,7 @@ function getResults(query) {
     .then(displayResults);
 };
 
-document.addEventListener('DOMContentLoaded', getResults)
+document.addEventListener('DOMContentLoaded', getResults())
 
 
 function clear() {
