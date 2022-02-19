@@ -10,7 +10,7 @@ searchBox.addEventListener("keypress", setQuery);
 
 function setQuery(e) {
   if (e.keyCode == 13) {
-    getResults(searchBox.value);
+    getResults(searchBox.value.toLowerCase());
     localStorage.setItem("location", searchBox.value);
     searchBox.value = "";
   }
@@ -38,6 +38,7 @@ function clear() {
 clear();
 
 function displayResults(weather) {
+  console.log(weather)
   let main = document.querySelector("main");
   main.classList.add("show");
   let city = document.querySelector(".location .city");
